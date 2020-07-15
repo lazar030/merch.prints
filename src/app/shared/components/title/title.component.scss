@@ -1,0 +1,36 @@
+.title {
+  max-width: 1200px !important;
+  margin: 60px auto;
+
+  .rainbow-header {
+    text-align: center;
+    background-image: url(../../../../assets/images/hero-texture-small.png);
+    background-position: 50% 0;
+    text-align: center;
+    color: transparent;
+    -webkit-font-smoothing: antialiased;
+    background-clip: text;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 54px;
+    -webkit-line-seight: 0.8;
+    -webkit-background-align: center;
+    background-size: auto 140px;
+    margin-top: 16px;
+    margin-bottom: 16px;
+    font-family: 'proxima-nova', 'sans-serif' !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    line-height: 0.8 !important;
+    font-weight: 900 !important;
+    text-align: center !important;
+    -webkit-background-clip: text !important;
+
+    @media screen and (max-width: 768px) {
+      font-size: 50 * 0.6px;
+    }
+  }
+}

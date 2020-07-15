@@ -1,0 +1,19 @@
+ <svg
+              viewBox="0 0 24 24"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              width="24px"
+              height="24px"
+              color="currentColor"
+            >
+              <defs>
+                <path
+                  d="M11 11V5c0-.552.444-1 1-1 .552 0 1 .445 1 1v6h6c.552 0 1 .444 1 1 0 .552-.445 1-1 1h-6v6c0 .552-.444 1-1 1-.552 0-1-.445-1-1v-6H5c-.552 0-1-.444-1-1 0-.552.445-1 1-1h6z"
+                  id="4451"
+                ></path>
+              </defs>
+              <use
+                fill="currentColor"
+                xlink:href="#4451"
+                fill-rule="evenodd"
+              ></use>
+            </svg>

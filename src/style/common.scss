@@ -1,0 +1,152 @@
+$primary: #6693e0;
+
+ion-header {
+  --ion-background-color: #fff;
+}
+
+.invalid {
+  color: #e3686f;
+}
+
+.blue-span {
+  color: #6693e0;
+}
+
+.red {
+  color: red;
+}
+
+.black {
+  color: black !important;
+}
+
+.divider {
+  height: 1px;
+  background-color: rgb(232, 232, 232);
+  width: 80%;
+  margin: 0 auto;
+}
+
+.underline {
+  border-bottom: 1px solid rgba(232, 232, 232, 1) !important;
+}
+
+.rainbow {
+  text-align: center;
+  background-image: url(./assets/images/hero-texture-small.png);
+  color: transparent;
+  -webkit-font-smoothing: antialiased;
+  background-clip: text;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-line-seight: 0.8;
+  -webkit-background-align: center;
+  background-size: auto 140px;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.green {
+  color: #54b9a9 !important;
+}
+
+.yellow {
+  color: #eda346 !important;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.bolder {
+  font-weight: 900;
+}
+
+.text-normal {
+  text-transform: initial !important;
+}
+
+.blue {
+  text-decoration: underline;
+  color: #3ebeaf !important;
+  &:hover {
+    color: #3e7abe !important;
+  }
+}
+
+.bg-grey {
+  background: #f5f5f5 !important;
+}
+
+@media screen and (min-width: 577px) {
+  .hide-big {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .hide-small {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .ion-md-container {
+    width: 100%;
+    min-width: 768px;
+    max-width: 1440px;
+    margin: 50px auto;
+  }
+}
+
+.badge {
+  max-width: 200px;
+  margin: 0 auto;
+}
+
+.content,
+.content-slider {
+  height: auto;
+  margin: 0 auto 0;
+  padding: 15px 0;
+  background-color: #fff;
+
+  @media screen and (min-width: 992px) {
+    max-width: 1400px;
+  }
+}
+
+.float-right {
+  float: right;
+}
+
+.float-left {
+  float: left;
+}
+
+.content {
+  padding: 15px;
+}
+
+.no-padding {
+  padding: 0 !important;
+}
+
+.no-margin {
+  margin: 0 !important;
+}
+
+a:hover {
+  color: $primary;
+}
+
+.isInvalid {
+  border-color: #e3686f !important;
+}

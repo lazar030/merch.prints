@@ -1,0 +1,46 @@
+div {
+  background: #fff;
+}
+
+.ion-md-container {
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.dark {
+  color: #000;
+  margin-top: 60px;
+  @media screen and(max-width: 575px) {
+    text-align: center;
+  }
+}
+
+.bold {
+  font-weight: 900;
+}
+
+ion-input {
+  --background: #fff;
+  --placeholder-opacity: 0.8;
+  --padding-start: 10px;
+}
+
+.custom-input {
+  height: 60px;
+}
+
+form {
+  width: 100%;
+}
+
+ion-button {
+  height: 50px;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+}
+
+@media screen and (min-width: 768px) {
+  .ion-md-top {
+    margin-top: 50px;
+  }
+}

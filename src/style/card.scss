@@ -1,0 +1,40 @@
+.ion-custom-container {
+  background: #fafbfc;
+  .sc-ion-card-ios-h,
+  .sc-ion-card-md-h {
+    margin-left: unset;
+    margin-right: unset;
+    -webkit-margin-start: 10px;
+    margin-inline-start: 10px;
+    -webkit-margin-end: 10px;
+    margin-inline-end: 10px;
+    box-shadow: none;
+    background: #fff;
+    min-height: 315px;
+  }
+}
+
+.sc-ion-card-ios-h,
+.sc-ion-card-md-h {
+  margin-left: unset;
+  margin-right: unset;
+  -webkit-margin-start: 10px;
+  margin-inline-start: 10px;
+  -webkit-margin-end: 10px;
+  box-shadow: none;
+  margin-inline-end: 10px;
+}
+
+.card-content-md p {
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+.custom-card {
+  background: rgb(31, 30, 30);
+}
+
+ion-card-title {
+  font-size: 30px;
+  font-weight: 700;
+}

@@ -1,0 +1,76 @@
+.border-left {
+  border-left: 1px solid rgb(232, 232, 232);
+}
+
+.border-right {
+  border-right: 1px solid rgb(232, 232, 232);
+}
+
+.border-bottom {
+  border-bottom: 1px solid rgb(232, 232, 232);
+}
+
+.border-top {
+  border-top: 1px solid rgb(232, 232, 232);
+}
+
+.border-full {
+  border: 1px solid rgb(232, 232, 232);
+}
+.border-v {
+  border-left: 1px solid rgb(232, 232, 232);
+  border-right: 1px solid rgb(232, 232, 232);
+}
+.border-h {
+  border-top: 1px solid rgb(232, 232, 232);
+  border-bottom: 1px solid rgb(232, 232, 232);
+}
+
+// Dark Border
+
+.dark-border-left {
+  border-left: 1px solid rgb(179, 179, 179);
+}
+
+.dark-border-right {
+  border-right: 1px solid rgb(179, 179, 179);
+}
+
+.dark-border-bottom {
+  border-bottom: 1px solid rgb(179, 179, 179);
+}
+
+.dark-border-top {
+  border-top: 1px solid rgb(179, 179, 179);
+}
+
+.dark-border-full {
+  border: 1px solid rgb(179, 179, 179);
+}
+.dark-border-v {
+  border-left: 1px solid rgb(179, 179, 179);
+  border-right: 1px solid rgb(179, 179, 179);
+}
+.dark-border-h {
+  border-top: 1px solid rgb(179, 179, 179);
+  border-bottom: 1px solid rgb(179, 179, 179);
+}
+
+@media screen and (max-width: 767px) {
+  .sm-border-top {
+    border-top: 1px solid rgb(232, 232, 232);
+  }
+  .sm-border-left {
+    border-left: 1px solid rgb(232, 232, 232);
+  }
+  .sm-border-bottom {
+    border-bottom: 1px solid rgb(232, 232, 232);
+  }
+  .sm-border-right {
+    border-right: 1px solid rgb(232, 232, 232);
+  }
+
+  .sm-no-border-top {
+    border-top: none;
+  }
+}

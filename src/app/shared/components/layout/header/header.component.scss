@@ -1,0 +1,415 @@
+$primary: #54b9a9;
+$color-base: #fff;
+$color-text: #222;
+$color-accent: desaturate(navy, 80%);
+
+.telephone {
+  font-size: 25px;
+  margin-right: 5px;
+}
+
+.mini-nav {
+  display: flex;
+  margin-top: 6px;
+}
+
+nav {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 60px;
+  background: $color-base;
+  border-bottom: 1px solid #e6e6e6;
+  z-index: 9999;
+
+  .call {
+    font-weight: 600;
+  }
+
+  a {
+    color: $color-accent;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 18px;
+  }
+
+  .logo {
+    position: relative;
+    cursor: pointer;
+    float: left;
+    padding: 6px 25px 0px 23px;
+    max-width: 250px;
+    margin-top: 15px;
+
+    @media screen and (max-width: 330px) {
+      max-width: 170px;
+    }
+  }
+
+  .padding-right {
+    padding-right: 20px !important;
+  }
+
+  .links-l {
+    float: right;
+    position: relative;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+
+    .links-li {
+      float: left;
+      list-style: none;
+      position: relative;
+      padding: 20px 0px;
+      white-space: nowrap;
+      display: inline-block;
+      cursor: pointer;
+      color: #000;
+
+      &:hover {
+        color: $primary;
+      }
+
+      & > a {
+        position: relative;
+        display: flex;
+        padding: 0;
+        line-height: 20px;
+        height: 20px;
+        margin: 0 10px;
+
+        &:hover {
+          background: transparent;
+          color: $primary;
+          border-radius: 2px;
+        }
+
+        &[class^='trigger-'] {
+          padding-right: 25px;
+        }
+      }
+
+      .dropdown {
+        background: #fff;
+        z-index: 9999 !important;
+        visibility: hidden;
+        list-style-type: none;
+        width: auto;
+        opacity: 0;
+        min-width: 5rem;
+        transition: all 0.5s ease;
+        margin-top: 1rem;
+        left: 0;
+        display: none;
+        position: absolute;
+
+        &:hover {
+          display: block;
+        }
+      }
+
+      &:hover > .dropdown,
+      .dropdown:hover {
+        visibility: visible;
+        opacity: 1;
+        display: block;
+        color: $primary;
+      }
+
+      .dropdown .d-li {
+        clear: both;
+        padding: 5px 0;
+        width: auto;
+        margin: 0 15px;
+
+        a {
+          font-size: 16px;
+        }
+
+        &:hover {
+          a {
+            color: $primary;
+          }
+        }
+      }
+    }
+
+    .go-link {
+      margin-right: 15px;
+      text-decoration: none;
+
+      &:hover {
+        color: #a7a7a8;
+        text-decoration: underline;
+      }
+
+      .tel-number {
+        color: $primary;
+      }
+
+      @media screen and(max-width: 1212px) {
+        .tel-number {
+          display: none !important;
+        }
+      }
+    }
+  }
+
+  .links-r {
+    float: right;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+
+    .links-li {
+      float: left;
+      list-style: none;
+      position: relative;
+      padding: 15.5px 0px;
+      white-space: nowrap;
+      display: inline-block;
+      cursor: pointer;
+      color: #000;
+
+      .d-icon {
+        margin-right: 5px;
+      }
+    }
+
+    .dropdown-links {
+      list-style: none;
+
+      .dropdown {
+        background: #fff;
+        z-index: 9999 !important;
+        visibility: hidden;
+        list-style-type: none;
+        width: auto;
+        opacity: 0;
+        min-width: 5rem;
+        transition: all 0.5s ease;
+        margin-top: 1rem;
+        right: 0;
+        display: none;
+        position: absolute;
+
+        &:hover {
+          display: block;
+        }
+      }
+
+      &:hover > .dropdown,
+      .dropdown:hover {
+        visibility: visible;
+        opacity: 1;
+        display: block;
+        color: $primary;
+      }
+
+      .dropdown .d-li {
+        clear: both;
+        padding: 5px 0;
+        width: auto;
+        margin: 0 15px;
+
+        a {
+          font-size: 16px;
+        }
+
+        &:hover {
+          a {
+            color: $primary;
+          }
+        }
+      }
+    }
+
+    .tel-li,
+    .r-li {
+      float: left;
+      list-style: none;
+      position: relative;
+      margin: 15px 0px;
+      white-space: nowrap;
+      display: inline-block;
+
+      @media screen and (max-width: 1280px) {
+        display: none;
+      }
+
+      @media screen and(max-width: 888px) {
+        .nav-links {
+          display: none;
+        }
+      }
+
+      @media screen and(max-width: 372px) {
+        .sm-nav-links {
+          display: none;
+        }
+      }
+
+      .trigger-drop-e3686f:hover {
+        color: #e3686f;
+        text-decoration: underline;
+      }
+
+      .trigger-drop-eda346 {
+        ion-icon {
+          color: #eda346 !important;
+        }
+
+        &:hover {
+          color: #eda346;
+          text-decoration: underline;
+        }
+      }
+
+      .trigger-drop-54b9a9 {
+        ion-icon {
+          color: #54b9a9;
+        }
+
+        &:hover {
+          color: #54b9a9;
+          text-decoration: underline;
+        }
+      }
+
+      .trigger-drop-6693e0:hover {
+        color: #6693e0;
+        text-decoration: underline;
+      }
+      .trigger-drop-link {
+        cursor: pointer;
+        &:hover {
+          color: grey;
+          text-decoration: underline;
+        }
+      }
+
+      & > a {
+        position: relative;
+        display: flex;
+        padding: 0;
+        line-height: 30px;
+        height: 30px;
+
+        &:hover {
+          background: transparent;
+          border-radius: 2px;
+        }
+
+        &[class^='trigger-'] {
+          padding-right: 25px;
+        }
+
+        .dropdown {
+          background: #fff;
+          z-index: 9999 !important;
+          visibility: hidden;
+          list-style-type: none;
+          width: auto;
+          opacity: 0;
+          min-width: 5rem;
+          transition: all 0.5s ease;
+          margin-top: 1rem;
+          left: 0;
+          display: none;
+          position: absolute;
+
+          &:hover {
+            display: block;
+          }
+        }
+
+        &:hover > .dropdown,
+        .dropdown:hover {
+          visibility: visible;
+          opacity: 1;
+          display: block;
+          color: #e3686f;
+        }
+
+        .dropdown .d-li {
+          clear: both;
+          padding: 5px 0;
+          width: auto;
+          margin: 0 15px;
+
+          a {
+            font-size: 16px;
+          }
+
+          &:hover {
+            a {
+              color: #e3686f;
+            }
+          }
+        }
+
+        .arrow {
+          position: absolute;
+          width: 10px;
+          height: 10px;
+          top: 35%;
+          text-align: center;
+          right: 10px;
+          border-width: 5px 5px 0 5px;
+          border-style: solid;
+          border-color: rgba(#000, 0.3) transparent;
+
+          &:after {
+            content: '';
+            border-left: 1px solid rgba(#000, 0.15);
+            top: -10px;
+            left: -15px;
+            position: absolute;
+            height: 15px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.icon-img {
+  font-size: 25px;
+  margin-right: 5px;
+}
+
+.arena-text {
+  padding-right: 5px;
+}
+
+@media screen and(min-width: 1280px) {
+  .dropdown-links {
+    display: none !important;
+  }
+}
+
+@media screen and(max-width: 1482px) {
+  .arena-text {
+    display: none;
+  }
+}
+
+@media screen and(max-width: 1212px) {
+  .tel-number {
+    display: none !important;
+  }
+}
+@media screen and(max-width: 767px) {
+  .hide-md {
+    display: none;
+  }
+}
+
+@media screen and(min-width: 768px) {
+  .show-md {
+    display: none;
+  }
+}

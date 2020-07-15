@@ -1,0 +1,98 @@
+<ion-app>
+  <ion-menu autoHide="false" contentId="content1" side="end">
+    <ion-content>
+      <ion-list class="border-bottom">
+        <ion-item lines="none">
+          <ul class="links">
+            <li class="links-li">
+              <a href="tel: (855) 462-7362" class="go-link">
+                <i class="fal fa-phone-alt"></i>
+                (855) 462-7362</a
+              >
+            </li>
+          </ul>
+        </ion-item>
+      </ion-list>
+      <ion-list>
+        <ion-item>
+          <ul class="links">
+            <li class="links-li">
+              <a (click)="navigate('home')">Home </a>
+            </li>
+          </ul>
+        </ion-item>
+        <ion-item>
+          <ul class="links">
+            <li class="links-li">
+              <a (click)="toggle()">
+                Printing Options
+              </a>
+              <ul id="options" class="sublist">
+                <li class="d-li underline">
+                  <a (click)="navigate('screen-printing')"
+                    >Apparel Screen Printing</a
+                  >
+                </li>
+                <li class="d-li underline">
+                  <a (click)="navigate('direct-to-garment-printing')"
+                    >Direct to Garment Printing</a
+                  >
+                </li>
+                <li class="d-li">
+                  <a (click)="navigate('dye-sublimation')"
+                    >Dye Sublimation Transfer</a
+                  >
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </ion-item>
+        <ion-item>
+          <ul class="links">
+            <li class="links-li">
+              <a (click)="navigate('pricing')">Pricing </a>
+            </li>
+          </ul>
+        </ion-item>
+
+        <ion-item>
+          <ul class="links">
+            <li class="links-li">
+              <a (click)="navigate('band-merch')">Band Merch </a>
+            </li>
+          </ul>
+        </ion-item>
+      </ion-list>
+      <ion-list>
+        <ion-item
+          *ngFor="let page of pages"
+          (click)="open(page.url)"
+          lines="none"
+        >
+          <ion-icon
+            class="icon green"
+            src="../../../assets/icons/{{ page.icon }}.svg"
+            *ngIf="page.icon === 'Embroidery'"
+          >
+          </ion-icon>
+
+          <ion-icon
+            class="icon yellow"
+            src="../../../assets/icons/{{ page.icon }}.svg"
+            *ngIf="page.icon === 'SB'"
+          >
+          </ion-icon>
+          <ion-icon
+            *ngIf="page.icon !== 'Embroidery' && page.icon !== 'SB'"
+            class="icon"
+            src="../../../assets/icons/{{ page.icon }}.svg"
+          >
+          </ion-icon>
+          {{ page.title }}
+        </ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+
+  <ion-router-outlet id="content1"></ion-router-outlet>
+</ion-app>

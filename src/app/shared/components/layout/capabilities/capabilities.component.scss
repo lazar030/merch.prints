@@ -1,0 +1,14 @@
+$primary: #6693e0;
+
+.box-card {
+  padding: 15px;
+  text-align: center;
+  border: 2px solid $primary;
+  border-radius: 5px;
+  cursor: pointer;
+  min-height: 248px;
+
+  &:hover {
+    border-color: blue;
+  }
+}

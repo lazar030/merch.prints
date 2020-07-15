@@ -1,0 +1,98 @@
+<div class="modal-header">
+  <h4 class="modal-title ion-text-center">
+    COMPLETE YOUR PRINT QUOTE
+  </h4>
+  <button
+    type="button"
+    class="close pull-right"
+    aria-label="Close"
+    (click)="modalRef.hide()"
+  >
+    <span aria-hidden="true">
+      <ion-icon src="../../../../assets/icons/cross.svg"></ion-icon>
+    </span>
+  </button>
+</div>
+<div class="modal-body ">
+  <ion-row>
+    <ion-col size="12">
+      <ion-icon class="shirt-logo" src="../../../../assets/icons/shirts.svg">
+      </ion-icon>
+    </ion-col>
+
+    <ion-col size="12">
+      <p class="content-text">
+        Got it! Now that you have an idea of what each print will cost, chat
+        with our professionals to finalize your garment type, ink requirements
+        and design options. We will be able to give you a complete quote once we
+        confirm your final order details.
+      </p>
+    </ion-col>
+
+    <ion-col size="12">
+      <ion-row>
+        <ion-col class="border-full" size="12">
+          <div class="box">
+            <ion-icon
+              class="icons-2"
+              src="../../../../assets/icons/shirt.svg"
+            ></ion-icon>
+            <p>
+              Choose from over 145 different garment options.
+            </p>
+          </div>
+        </ion-col>
+        <ion-col class="border-v" size="12">
+          <div class="box">
+            <ion-icon
+              class="icons-2"
+              src="../../../../assets/icons/artwork.svg"
+            ></ion-icon>
+
+            <p>
+              Prepare your Artwork for printing with our template.
+            </p>
+          </div>
+        </ion-col>
+
+        <ion-col class="border-full" size="12">
+          <div class="box">
+            <ion-icon
+              class="icons-2"
+              src="../../../../assets/icons/sew.svg"
+            ></ion-icon>
+
+            <p>
+              Select the right printing technique depending on your needs.
+            </p>
+          </div>
+        </ion-col>
+        <ion-col class="border-bottom border-v" size="12">
+          <div class="box">
+            <ion-icon
+              class="icons-2"
+              src="../../../../assets/icons/shipeed.svg"
+            ></ion-icon>
+            <p>
+              Choose to pick up your items or get them shipped.
+            </p>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-col>
+  </ion-row>
+
+  <ion-button
+    (click)="submit(chat)"
+    expand="full"
+    size="large"
+    class="text-normal"
+    >Chat to Continue
+    <ion-icon
+      class="arrow-right"
+      src="../../../../../assets/icons/arr-r.svg"
+    ></ion-icon>
+  </ion-button>
+</div>
+
+<my-chat #chat> </my-chat>

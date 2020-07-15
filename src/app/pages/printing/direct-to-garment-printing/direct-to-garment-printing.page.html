@@ -1,0 +1,136 @@
+<ion-content>
+  <my-header></my-header>
+  <carousel
+    [itemsPerSlide]="itemsPerSlide"
+    [singleSlideOffset]="singleSlideOffset"
+    [interval]="3000"
+    [showIndicators]="false"
+  >
+    <slide *ngFor="let slide of slides; let index=index">
+      <img
+        [src]="slide.image"
+        alt="image slide"
+        style="display: block; width: 100%;"
+      />
+    </slide>
+  </carousel>
+
+  <div class="title-box ion-padding">
+    <my-title [title]="title"></my-title>
+  </div>
+  <ion-row
+    class="info ion-margin-top ion-no-padding ion-margin-bottom ion-padding-bottom"
+  >
+    <ion-col size="12" class="ion-margin-bottom ion-padding-bottom">
+      <h1 class="ion-text-center bold">DIRECT TO GARMENT PRINTING OVERVIEW</h1>
+    </ion-col>
+
+    <ion-col size="12" sizeMd="6" class="border-full  ion-padding">
+      <p>Unlimited Color Arrays and Photographic Resolution</p>
+    </ion-col>
+    <ion-col
+      size="12"
+      sizeMd="6"
+      class="border-h border-right sm-no-border-top sm-border-left ion-padding"
+    >
+      <p>Printed on 90%-100% Ring Spun Cotton</p>
+    </ion-col>
+    <ion-col size="12" sizeMd="6" class="border-v border-bottom ion-padding">
+      <p>Any Color Garment</p>
+    </ion-col>
+    <ion-col
+      size="12"
+      sizeMd="6"
+      class="border-right border-bottom sm-border-left ion-padding"
+    >
+      <p>
+        Durable, soft, breathable, vibrant
+      </p>
+    </ion-col>
+
+    <ion-col size="12" class="ion-text-center">
+      <p>
+        <b>Arena Prints</b> offers the most affordable options for
+        <b>Digital</b> and
+        <b>Direct To Garment (DTG) Printing and Heat Transfers</b>. Using the
+        latest and most advanced digital technologies available, Arena Prints
+        has mastered DTG Printing across multiple apparel types, making it
+        possible for you to offer custom one-off and bulk prints of your
+        photographic images and color-rich designs without having stock
+        inventory. Our specialized process is ideal for short run, small batch,
+        and one-off custom tee shirt and apparel printing needs. The speciality
+        inks and digital print systems <b>Arena Prints</b> uses makes direct to
+        garment printing an affordable and reliable print option for highly
+        detailed artwork. Printing your own t-shirt has never been easier. Have
+        an awesome idea for a custom printed tee shirt? Let
+        <b>Arena Prints</b> make it happen.
+      </p>
+
+      <p>
+        We specialize in bulk apparel Screen Printing & Embroidery on
+        <b
+          >T-Shirts, Hats, Tanks, & Hoodies for Everyday Folks, Musicians &
+          Bands, Ecommerce Stores, Athletics & Sports Teams, Tattoo Artists,
+          Yoga Studios, Coffee Shops, Schools, Corporate Logos, & Local
+          Business</b
+        >. Our fair and competitive pricing, along with our 100% Satisfaction
+        Guarantee, also makes <b>Arena Prints</b> the ideal print partner for
+        any charity, political organization, trade show convention, corporate
+        events, and all special occasions. <b>Thank you for choosing Arena!</b>
+      </p>
+    </ion-col>
+
+    <ion-col
+      size="12"
+      class="ion-text-center ion-margin-bottom ion-padding-bottom"
+    >
+      <ion-button
+        [routerLink]="['/pricing']"
+        size="large"
+        class="ion-text-center text-normal"
+        >Get Printing Quote</ion-button
+      >
+    </ion-col>
+    <ion-col class="ion-text-center" size="12">
+      <p>
+        <ion-icon src="../../../assets/icons/Cloud.svg"></ion-icon>
+        Use our
+        <span
+          ><a href="javascript:;" (click)="openChat(chat)">Live Chat now</a>
+        </span>
+        to speak to a Sewing Specialist
+      </p>
+
+      <div class="divider"></div>
+
+      <p class="ion-margin-top">
+        <ion-icon src="../../../assets/icons/tel.svg"></ion-icon>
+        Or call us today at
+        <span
+          ><a href="tel:(855) 462-7362">(855) 462-7362</a> or
+          <a href="tel:tel:(855) 462-7362">(855) GO ARENA</a></span
+        >
+      </p>
+    </ion-col>
+  </ion-row>
+
+  <div class="divider ion-margin-top"></div>
+
+  <my-testimonials></my-testimonials>
+
+  <div class="divider ion-margin-top"></div>
+
+  <ion-row
+    class="info ion-margin-top ion-no-padding ion-margin-bottom ion-padding-bottom"
+  >
+    <ion-col size="12">
+      <my-capabilities></my-capabilities>
+    </ion-col>
+  </ion-row>
+
+  <my-partners></my-partners>
+
+  <my-footer></my-footer>
+
+  <my-chat #chat></my-chat>
+</ion-content>

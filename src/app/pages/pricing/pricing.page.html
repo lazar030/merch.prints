@@ -1,0 +1,1278 @@
+<ion-content>
+  <my-header></my-header>
+  <div class="title-box bg-grey">
+    <my-title [title]="title"></my-title>
+  </div>
+  <ion-row
+    class="info ion-margin-top ion-no-padding ion-margin-bottom ion-padding-bottom"
+  >
+    <ion-col size="12" class="ion-margin-bottom ion-padding-bottom">
+      <p>
+        <b>Arena Prints</b> is committed to providing the highest quality
+        printing services for the most competitive pricing in Arizona and the
+        greater Southwest.
+      </p>
+    </ion-col>
+
+    <ion-col size="12" sizeMd="6" class="border-full  ion-padding">
+      <p class="bold">
+        Choose from hundreds of different apparel styles, brands and colors
+      </p>
+    </ion-col>
+    <ion-col
+      size="12"
+      sizeMd="6"
+      class="border-h border-right sm-no-border-top sm-border-left ion-padding"
+    >
+      <p class="bold">
+        Prepare your Artwork for printing using our templates or design team
+      </p>
+    </ion-col>
+    <ion-col size="12" sizeMd="6" class="border-v border-bottom ion-padding">
+      <p class="bold">Select your printing technique, inks and finishes</p>
+    </ion-col>
+    <ion-col
+      size="12"
+      sizeMd="6"
+      class="border-right border-bottom sm-border-left ion-padding "
+    >
+      <p class="bold">
+        Manage your orders and account securely online
+      </p>
+    </ion-col>
+
+    <ion-col class="ion-text-center ion-margin-top ion-padding-top" size="12">
+      <p>
+        <ion-icon src="../../../assets/icons/Cloud.svg"></ion-icon>
+        Use our
+        <span
+          ><a href="javascript:;" (click)="openChat(chat)">Live Chat now</a>
+        </span>
+        to speak to a Sewing Specialist
+      </p>
+
+      <div class="divider"></div>
+
+      <p class="ion-margin-top">
+        <ion-icon src="../../../assets/icons/tel.svg"></ion-icon>
+        Or call us today at
+        <span
+          ><a href="tel:(855) 462-7362">(855) 462-7362</a> or
+          <a href="tel:tel:(855) 462-7362">(855) GO ARENA</a></span
+        >
+      </p>
+    </ion-col>
+  </ion-row>
+
+  <div class="divider"></div>
+
+  <ion-row class="info ion-padding ion-margin-top">
+    <form class="form" (ngSubmit)="onSubmit(form)">
+      <ion-col size="12" class="ion-margin-bottom ion-padding-bottom">
+        <div class="button-box">
+          <div class="box">
+            <button
+              type="button"
+              (click)="switchTab('1')"
+              [ngClass]="{
+                'box-btn-active': tab === '1',
+                'box-btn': tab !== '1'
+              }"
+              class="border-radius-left"
+            >
+              <span class="span-btn">Screen Printing</span></button
+            ><button
+              type="button"
+              (click)="switchTab('2')"
+              [ngClass]="{
+                'box-btn-active': tab === '2',  
+                'box-btn': tab !== '2'
+              }"
+            >
+              <span class="span-btn">Direct to Garment</span>
+            </button>
+            <button
+              type="button"
+              (click)="switchTab('3')"
+              [ngClass]="{
+                'box-btn-active': tab === '3',  
+                'box-btn': tab !== '3'
+              }"
+              class="border-radius-right"
+            >
+              <span class="span-btn">Dye Sublimation</span>
+            </button>
+          </div>
+        </div>
+      </ion-col>
+
+      <ion-col size="12">
+        <accordion *ngIf="tab === '1'" [isAnimated]="true">
+          <accordion-group [isOpen]="true">
+            <button
+              class="btn btn-link btn-block clearfix bold black"
+              accordion-heading
+              type="button"
+            >
+              <div class="pull-left float-left">Choose Print Locations:</div>
+              <span
+                class="float-left pull-left acc-h"
+                *ngFor="let x of pricing.location; let i = index"
+                >{{ x }} {{ i + 1 !== pricing.location.length ? ',' : ''
+                }}</span
+              >
+            </button>
+
+            <div class="acc-content">
+              <div class="left-panel">
+                <label class="acc-label"
+                  ><input
+                    type="checkbox"
+                    class="acc-input"
+                    value="fullfront"
+                    (click)="toggleLocation('fullfront')"
+                  /><span
+                    [ngClass]="{
+                    'acc-span-active': checkLocation('fullfront'),
+                    'acc-span': !checkLocation('fullfront')
+                  }"
+                    ><ion-icon
+                      class="acc-icon"
+                      src="../../../assets/icons/checkout.svg"
+                    ></ion-icon></span
+                  ><span class="acc-text">Front 24"x20"</span></label
+                ><label class="acc-label"
+                  ><input
+                    type="checkbox"
+                    class="acc-input"
+                    value="fullback"
+                    (click)="toggleLocation('fullback')"
+                  /><span
+                    [ngClass]="{
+                      'acc-span-active': checkLocation('fullback'),
+                      'acc-span': !checkLocation('fullback')
+                    }"
+                    ><ion-icon
+                      class="acc-icon"
+                      src="../../../assets/icons/checkout.svg"
+                    ></ion-icon></span
+                  ><span class="acc-text">Back 24"x20"</span></label
+                ><label class="acc-label"
+                  ><input
+                    type="checkbox"
+                    class="acc-input"
+                    value="leftsleeve"
+                    (click)="toggleLocation('leftsleeve')"
+                  /><span
+                    [ngClass]="{
+                      'acc-span-active': checkLocation('leftsleeve'),
+                      'acc-span': !checkLocation('leftsleeve')
+                    }"
+                    ><ion-icon
+                      class="acc-icon"
+                      src="../../../assets/icons/checkout.svg"
+                    ></ion-icon></span
+                  ><span class="acc-text">Left Sleeve 4"x4"</span></label
+                ><label class="acc-label"
+                  ><input
+                    type="checkbox"
+                    class="acc-input"
+                    value="rightsleeve"
+                    (click)="toggleLocation('rightsleeve')"
+                  /><span
+                    [ngClass]="{
+                      'acc-span-active': checkLocation('rightsleeve'),
+                      'acc-span': !checkLocation('rightsleeve')
+                    }"
+                    ><ion-icon
+                      class="acc-icon"
+                      src="../../../assets/icons/checkout.svg"
+                    ></ion-icon></span
+                  ><span class="acc-text">Right Sleeve 4"x4</span></label
+                >
+              </div>
+              <div class="shirt-box">
+                <div>
+                  <div class="shirts">
+                    <!-- Right Start -->
+                    <img
+                      *ngIf="checkLocation('rightsleeve')"
+                      class="shirt"
+                      src="../../../assets/images/right.svg"
+                      alt="T-Shirt Print Area"
+                    />
+                    <!-- Right End -->
+
+                    <!-- Left Start -->
+                    <img
+                      *ngIf="checkLocation('leftsleeve')"
+                      class="shirt"
+                      src="../../../assets/images/left.svg"
+                      alt="T-Shirt Print Area"
+                    />
+                    <!-- Left End -->
+
+                    <!-- Back Start -->
+                    <img
+                      *ngIf="checkLocation('fullback')"
+                      class="shirt"
+                      src="../../../assets/images/back.svg"
+                      alt="T-Shirt Print Area"
+                    />
+                    <!-- Back End -->
+
+                    <!-- Front Start -->
+                    <img
+                      *ngIf="checkLocation('fullfront')"
+                      class="shirt"
+                      src="../../../assets/images/front.svg"
+                      alt="T-Shirt Print Area"
+                    />
+                    <!-- Front End -->
+
+                    <!-- Shirt Start -->
+                    <img
+                      class="shirt"
+                      src="../../../assets/images/shirt.svg"
+                      alt="T-Shirt"
+                    />
+                    <!-- Shirt End -->
+                  </div>
+                  <div class="text-box">
+                    <p class="text">Front view</p>
+                    <p class="text">Back view</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </accordion-group>
+          <accordion-group [isOpen]="true">
+            <button
+              class="btn btn-link btn-block clearfix bold black"
+              accordion-heading
+              type="button"
+            >
+              <div class="pull-left float-left">Garment Quality?</div>
+              <span class="float-left pull-left acc-h"
+                >{{ pricing.garmentQuality }}</span
+              >
+            </button>
+            <div class="garment-box">
+              <div class="garment-wrap">
+                <label class="garment-label"
+                  ><input
+                    type="radio"
+                    class="garment-input"
+                    value="good"
+                    (click)="setGarment('good')"
+                  />
+                  <span
+                    [ngClass]="{
+                    'garment-span-active': pricing.garmentQuality === 'good',
+                    'garment-span': pricing.garmentQuality !== 'good'
+                  }"
+                    ><ion-icon
+                      class="acc-icon"
+                      src="../../../assets/icons/radio.svg"
+                    ></ion-icon></span
+                  ><span class="garment-text">Good</span></label
+                >
+                <p class="">
+                  Starting at:<span class="garment-price">$2.65</span>
+                </p>
+                <p class="price-box">
+                  Durability: ★ ★ ★<br />Brands:<br /><br /><a
+                    href="http://www.hanes.com"
+                    target="_blank"
+                    class="darment-link"
+                    ><span class="link-span">Hanes</span></a
+                  ><br /><a
+                    href="http://www.mygildan.com"
+                    target="_blank"
+                    class="darment-link"
+                    ><span class="link-span">Gildan</span></a
+                  ><br /><a
+                    href="http://www.fruit.com"
+                    target="_blank"
+                    class="darment-link"
+                    ><span class="link-span">Fruit of the Loom</span></a
+                  ><br /><a
+                    href="http://www.portauthorityclothing.com"
+                    target="_blank"
+                    class="darment-link"
+                    ><span class="link-span">Port Authority</span></a
+                  ><br /><a
+                    href="http://www.anvilknitwear.com"
+                    target="_blank"
+                    class="darment-link"
+                    ><span class="link-span">Anvil</span></a
+                  >
+                </p>
+              </div>
+              <div class="garment-wrap">
+                <label class="garment-label"
+                  ><input
+                    type="radio"
+                    class="garment-input"
+                    value="better"
+                    (click)="setGarment('better')"
+                  /><span
+                    [ngClass]="{
+                      'garment-span-active': pricing.garmentQuality === 'better',
+                      'garment-span': pricing.garmentQuality !== 'better'
+                    }"
+                    ><ion-icon
+                      class="acc-icon"
+                      src="../../../assets/icons/radio.svg"
+                    ></ion-icon></span
+                  ><span class="garment-text">Better</span></label
+                >
+                <p class="">
+                  Starting at:<span class="garment-price">$4.65</span>
+                </p>
+                <p class="price-box">
+                  Durability: ★ ★ ★ ★<br />Brands:<br /><br /><a
+                    href="http://www.nextlevelapparel.com"
+                    target="_blank"
+                    class="darment-link"
+                    ><span class="link-span">Next Level</span></a
+                  ><br /><a
+                    href="http://www.alternativeapparel.com"
+                    target="_blank"
+                    class="darment-link"
+                    ><span class="link-span">Alternative Apparel</span></a
+                  ><br /><a
+                    href="http://www.districtmade.com"
+                    target="_blank"
+                    class="darment-link"
+                    ><span class="link-span">District Made</span></a
+                  ><br /><a
+                    href="http://www.starteeapparel.com"
+                    target="_blank"
+                    class="darment-link"
+                    ><span class="link-span">Star Tee Apparel</span></a
+                  >
+                </p>
+              </div>
+              <div class="garment-wrap">
+                <label class="garment-label"
+                  ><input
+                    type="radio"
+                    class="garment-input"
+                    value="best"
+                    (click)="setGarment('best')"
+                  /><span
+                    [ngClass]="{
+                    'garment-span-active': pricing.garmentQuality === 'best',
+                    'garment-span': pricing.garmentQuality !== 'best'
+                    }"
+                    ><ion-icon
+                      class="acc-icon"
+                      src="../../../assets/icons/radio.svg"
+                    ></ion-icon></span
+                  ><span class="garment-text">Best</span></label
+                >
+                <p class="">
+                  Starting at:<span class="garment-price">$6.80</span>
+                </p>
+                <p class="price-box">
+                  Durability: ★ ★ ★ ★ ★<br />Brands:<br /><br /><span class=""
+                    ><a
+                      href="http://www.ascolour.com"
+                      target="_blank"
+                      class="darment-link"
+                      ><span class="link-span">Ascolour</span></a
+                    ><br /><a
+                      href="http://www.bellacanvas.com"
+                      target="_blank"
+                      class="darment-link"
+                      ><span class="link-span">Bella+Canvas</span></a
+                    ><br /><a
+                      href="http://www.royalapparel.net"
+                      target="_blank"
+                      class="darment-link"
+                      ><span class="link-span">Royal Apparel</span></a
+                    ><br /></span
+                  ><a
+                    href="http://www.losangelesapparel.net"
+                    target="_blank"
+                    class="darment-link"
+                    ><span class="link-span">Los Angeles Apparel</span></a
+                  >
+                </p>
+              </div>
+            </div>
+          </accordion-group>
+
+          <accordion-group [isOpen]="true">
+            <button
+              class="btn btn-link btn-block clearfix bold black"
+              accordion-heading
+              type="button"
+            >
+              <div class="pull-left float-left">Number of colors wanted:</div>
+              <span class="float-left pull-left acc-h"
+                >{{ pricing.colors }}</span
+              >
+            </button>
+
+            <div class="color-box">
+              <div class="color">
+                <ion-icon
+                  class="icon-color"
+                  src="../../../assets/icons/colors.svg"
+                ></ion-icon>
+                <label class="color-label"
+                  ><input
+                    type="radio"
+                    (click)="setColor(1)"
+                    class="color-input"
+                    value="1"
+                    checked=""
+                  /><span
+                    [ngClass]="{
+                      'color-span-active': pricing.colors === 1,
+                      'color-input-2': pricing.colors !== 1
+                   }"
+                  >
+                    <ion-icon
+                      class="acc-icon"
+                      src="../../../assets/icons/color-span.svg"
+                    ></ion-icon> </span
+                  ><span class="color-number">1</span></label
+                >
+              </div>
+              <div class="color">
+                <ion-icon
+                  class="icon-color"
+                  src="../../../assets/icons/color.svg"
+                ></ion-icon>
+                <label class="color-label">
+                  <input
+                    type="radio"
+                    (click)="setColor(2)"
+                    class="color-input"
+                    value="2"
+                  /><span
+                    [ngClass]="{
+                      'color-span-active': pricing.colors === 2,
+                      'color-input-2': pricing.colors !== 2
+                    }"
+                  >
+                    <ion-icon
+                      class="acc-icon"
+                      src="../../../assets/icons/color2.svg"
+                    ></ion-icon> </span
+                  ><span class="color-number">2</span></label
+                >
+              </div>
+              <div class="color">
+                <ion-icon
+                  class="icon-color"
+                  src="../../../assets/icons/colors2.svg"
+                ></ion-icon>
+                <label class="color-label"
+                  ><input
+                    type="radio"
+                    (click)="setColor(3)"
+                    class="color-input"
+                    value="3"
+                  /><span
+                    [ngClass]="{
+                      'color-span-active': pricing.colors === 3,
+                      'color-input-2': pricing.colors !== 3
+                    }"
+                  >
+                    <ion-icon
+                      class="acc-icon"
+                      src="../../../assets/icons/circle2.svg"
+                    ></ion-icon> </span
+                  ><span class="color-number">3</span></label
+                >
+              </div>
+              <div class="color">
+                <ion-icon
+                  class="icon-color"
+                  src="../../../assets/icons/color3.svg"
+                ></ion-icon>
+                <label class="color-label"
+                  ><input
+                    type="radio"
+                    (click)="setColor(4)"
+                    class="color-input"
+                    value="4"
+                  /><span
+                    [ngClass]="{
+                    'color-span-active': pricing.colors === 4,
+                    'color-input-2': pricing.colors !== 4
+                    }"
+                  >
+                    <ion-icon
+                      class="acc-icon"
+                      src="../../../assets/icons/circle2.svg"
+                    ></ion-icon> </span
+                  ><span class="color-number">4</span></label
+                >
+              </div>
+              <div class="color">
+                <ion-icon
+                  class="icon-color"
+                  src="../../../assets/icons/color4.svg"
+                ></ion-icon>
+                <label class="color-label"
+                  ><input
+                    type="radio"
+                    (click)="setColor(5)"
+                    class="color-input"
+                    value="5"
+                  /><span
+                    [ngClass]="{
+                      'color-span-active': pricing.colors === 5,
+                      'color-input-2': pricing.colors !== 5
+                    }"
+                  >
+                    <ion-icon
+                      class="acc-icon"
+                      src="../../../assets/icons/circle2.svg"
+                    ></ion-icon></span
+                  ><span class="color-number">5</span></label
+                >
+              </div>
+              <div class="color">
+                <ion-icon
+                  class="icon-color"
+                  src="../../../assets/icons/color5.svg"
+                ></ion-icon>
+
+                <label class="color-label"
+                  ><input
+                    type="radio"
+                    (click)="setColor(6)"
+                    class="color-input"
+                    value="6"
+                  /><span
+                    [ngClass]="{
+                      'color-span-active': pricing.colors === 6,
+                      'color-input-2': pricing.colors !== 6
+                    }"
+                  >
+                    <ion-icon
+                      class="acc-icon"
+                      src="../../../assets/icons/circle2.svg"
+                    ></ion-icon></span
+                  ><span class="color-number">6</span></label
+                >
+              </div>
+              <div class="color">
+                <ion-icon
+                  class="icon-color"
+                  src="../../../assets/icons/color6.svg"
+                ></ion-icon>
+
+                <label class="color-label"
+                  ><input
+                    type="radio"
+                    (click)="setColor(7)"
+                    class="color-input"
+                    value="7"
+                  /><span
+                    [ngClass]="{
+                      'color-span-active': pricing.colors === 7,
+                      'color-input-2': pricing.colors !== 7
+                    }"
+                  >
+                    <ion-icon
+                      class="acc-icon"
+                      src="../../../assets/icons/circle2.svg"
+                    ></ion-icon></span
+                  ><span class="color-number">7</span></label
+                >
+              </div>
+              <div class="color">
+                <ion-icon
+                  class="icon-color"
+                  src="../../../assets/icons/color7.svg"
+                ></ion-icon>
+                <label class="color-label"
+                  ><input
+                    type="radio"
+                    (click)="setColor(8)"
+                    class="color-input"
+                    value="8"
+                  /><span
+                    [ngClass]="{'color-span-active': pricing.colors === 8,
+                  'color-input-2': pricing.colors !== 8
+                }"
+                  >
+                    <ion-icon
+                      class="acc-icon"
+                      src="../../../assets/icons/circle2.svg"
+                    ></ion-icon></span
+                  ><span class="color-number">8</span></label
+                >
+              </div>
+              <label class="check-label"
+                ><input
+                  type="checkbox"
+                  (click)="toggleUnderbase()"
+                  class="color-input"
+                  value="underbase"
+                /><span
+                  [ngClass]="{
+                    'check-span': pricing.underbaseColor,
+                      'uncheck-span': !pricing.underbaseColor
+                  }"
+                >
+                  <ion-icon
+                    class="acc-icon"
+                    src="../../../assets/icons/check2.svg"
+                  ></ion-icon>
+                </span>
+                <span class="color-number">+1 underbase color</span>
+              </label>
+              <p class="p">
+                Don’t remove unless you are experienced in Screen Printing. If
+                there is not enough contrast between your apparel color and ink
+                color, an under base is needed to ensure your print done
+                accurately. We can determine if we have to use an under base
+                after formatting your print ready files. For sake of this
+                estimate, it makes sense to consider it.
+              </p>
+            </div>
+          </accordion-group>
+          <accordion-group [isOpen]="true">
+            <button
+              class="btn btn-link btn-block clearfix bold black"
+              accordion-heading
+              type="button"
+            >
+              <div class="pull-left float-left">Total Price:</div>
+              <span class="float-left pull-left acc-h"
+                >{{ pricing.totalPrice | currency}}</span
+              >
+            </button>
+
+            <div class="tp-box">
+              <div class="tp-wrap">
+                <div>Total Price per Shirt:</div>
+                <p class="tp-p">{{ totalPricePerShirt() | currency }}</p>
+                <div>Print Price:</div>
+                <p class="tp-p">{{ pricing.printPrice | currency}}</p>
+                <div>Garment Price:</div>
+                <p class="tp-p">{{ pricing.garmentPrice | currency }}</p>
+                <div>
+                  Print setup cost per print area &amp; color ({{
+                  pricing.colorsCount }}):
+                  <p class="tp-p">{{ pricing.printCostAndColor | currency}}</p>
+                </div>
+              </div>
+              <div class="tp-wrap2">
+                <div class="ion-margin-bottom">
+                  How many do you want?<br />12 to 5000 units.
+                </div>
+                <div class="plus-minus">
+                  <input
+                    type="number"
+                    class="form-number"
+                    min="12"
+                    name="quantity"
+                    [(ngModel)]="pricing.quantity"
+                    class="form-number"
+                    (keydown)="onKeyDown($event)"
+                  />
+                  <div (click)="updateQnt('+')" class="plus">
+                    <ion-icon class="int" src="assets/icons/+.svg"></ion-icon>
+                  </div>
+                  <div (click)="updateQnt('-')" class="minus">
+                    <ion-icon class="int" src="assets/icons/-.svg"></ion-icon>
+                  </div>
+                  <div
+                    id="qnt-validate"
+                    style="opacity: 0; transform: matrix(0.9, 0, 0, 0.9, 0, 0);"
+                  >
+                    No letter just number!
+                  </div>
+                </div>
+                <div>Price excl tax:</div>
+                <p class="tp-p">{{ pricing.priceExTax | currency }}</p>
+                <div>
+                  <strong>Total</strong> inc tax (8.6%) excl delivery cost:
+                </div>
+                <div class="total-price">
+                  {{ pricing.totalPrice | currency}}
+                </div>
+              </div>
+            </div>
+          </accordion-group>
+        </accordion>
+        <accordion *ngIf="tab === '2'" [isAnimated]="true">
+          <accordion-group [isOpen]="true">
+            <button
+              class="btn btn-link btn-block clearfix bold black"
+              accordion-heading
+              type="button"
+            >
+              <div class="pull-left float-left">Choose Print Locations:</div>
+
+              <span
+                class="float-left pull-left acc-h"
+                *ngFor="let x of pricing.location; let i = index"
+                >{{ x }} {{ i + 1 !== pricing.location.length ? ',' : ''
+                }}</span
+              >
+            </button>
+            <div class="acc-content">
+              <div class="left-panel">
+                <label class="acc-label"
+                  ><input
+                    type="checkbox"
+                    class="acc-input"
+                    value="fullfront"
+                    (click)="toggleLocation('fullfront')"
+                  /><span
+                    [ngClass]="{
+                      'acc-span-active': checkLocation('fullfront'),
+                      'acc-span': !checkLocation('fullfront')
+                    }"
+                    ><ion-icon
+                      class="acc-icon"
+                      src="../../../assets/icons/checkout.svg"
+                    ></ion-icon></span
+                  ><span class="acc-text">Full Front 16"x20"</span></label
+                ><label class="acc-label"
+                  ><input
+                    type="checkbox"
+                    class="acc-input"
+                    value="fullback"
+                    (click)="toggleLocation('fullback')"
+                  /><span
+                    [ngClass]="{
+                      'acc-span-active': checkLocation('fullback'),
+                      'acc-span': !checkLocation('fullback')
+                    }"
+                    ><ion-icon
+                      class="acc-icon"
+                      src="../../../assets/icons/checkout.svg"
+                    ></ion-icon></span
+                  ><span class="acc-text">Full Back 16"x20"</span></label
+                >
+              </div>
+              <div class="shirt-box">
+                <div>
+                  <div class="shirts">
+                    <!-- Back Start -->
+                    <img
+                      class="shirt"
+                      src="../../../assets/images/back.svg"
+                      alt="T-Shirt Print Area"
+                    />
+                    <!-- Back End -->
+
+                    <!-- Front Start -->
+                    <img
+                      class="shirt"
+                      src="../../../assets/images/front.svg"
+                      alt="T-Shirt Print Area"
+                    />
+                    <!-- Front End -->
+
+                    <!-- Shirt Start -->
+                    <img
+                      class="shirt"
+                      src="../../../assets/images/shirt.svg"
+                      alt="T-Shirt"
+                    />
+                    <!-- Shirt End -->
+                  </div>
+                  <div class="text-box">
+                    <p class="text">Front view</p>
+                    <p class="text">Back view</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </accordion-group>
+          <accordion-group [isOpen]="true">
+            <button
+              class="btn btn-link btn-block clearfix bold black"
+              accordion-heading
+              type="button"
+            >
+              <div class="pull-left float-left">Garment Quality?</div>
+              <span class="float-left pull-left acc-h"
+                >{{ pricing.garmentQuality }}</span
+              >
+            </button>
+            <div class="garment-box">
+              <div class="garment-wrap">
+                <label class="garment-label"
+                  ><input
+                    type="radio"
+                    class="garment-input"
+                    value="good"
+                    (click)="setGarment('good')"
+                  />
+                  <span
+                    [ngClass]="{
+                      'garment-span-active': pricing.garmentQuality === 'good',
+                      'garment-span': pricing.garmentQuality !== 'good'
+                    }"
+                    ><ion-icon
+                      class="acc-icon"
+                      src="../../../assets/icons/radio.svg"
+                    ></ion-icon></span
+                  ><span class="garment-text">Good</span></label
+                >
+                <p class="">
+                  Starting at:<span class="garment-price">$2.65</span>
+                </p>
+                <p class="price-box">
+                  Durability: ★ ★ ★<br />Brands:<br /><br /><a
+                    href="http://www.hanes.com"
+                    target="_blank"
+                    class="darment-link"
+                    ><span class="link-span">Hanes</span></a
+                  ><br /><a
+                    href="http://www.mygildan.com"
+                    target="_blank"
+                    class="darment-link"
+                    ><span class="link-span">Gildan</span></a
+                  ><br /><a
+                    href="http://www.fruit.com"
+                    target="_blank"
+                    class="darment-link"
+                    ><span class="link-span">Fruit of the Loom</span></a
+                  ><br /><a
+                    href="http://www.portauthorityclothing.com"
+                    target="_blank"
+                    class="darment-link"
+                    ><span class="link-span">Port Authority</span></a
+                  ><br /><a
+                    href="http://www.anvilknitwear.com"
+                    target="_blank"
+                    class="darment-link"
+                    ><span class="link-span">Anvil</span></a
+                  >
+                </p>
+              </div>
+              <div class="garment-wrap">
+                <label class="garment-label"
+                  ><input
+                    type="radio"
+                    class="garment-input"
+                    value="better"
+                    (click)="setGarment('better')"
+                  />
+                  <span
+                    [ngClass]="{
+                    'garment-span-active': pricing.garmentQuality === 'better',
+                    'garment-span': pricing.garmentQuality !== 'better'
+                  }"
+                    ><ion-icon
+                      class="acc-icon"
+                      src="../../../assets/icons/radio.svg"
+                    ></ion-icon></span
+                  ><span class="garment-text">Better</span></label
+                >
+                <p class="">
+                  Starting at:<span class="garment-price">$4.65</span>
+                </p>
+                <p class="price-box">
+                  Durability: ★ ★ ★ ★<br />Brands:<br /><br /><a
+                    href="http://www.nextlevelapparel.com"
+                    target="_blank"
+                    class="darment-link"
+                    ><span class="link-span">Next Level</span></a
+                  ><br /><a
+                    href="http://www.alternativeapparel.com"
+                    target="_blank"
+                    class="darment-link"
+                    ><span class="link-span">Alternative Apparel</span></a
+                  ><br /><a
+                    href="http://www.districtmade.com"
+                    target="_blank"
+                    class="darment-link"
+                    ><span class="link-span">District Made</span></a
+                  ><br /><a
+                    href="http://www.starteeapparel.com"
+                    target="_blank"
+                    class="darment-link"
+                    ><span class="link-span">Star Tee Apparel</span></a
+                  >
+                </p>
+              </div>
+              <div class="garment-wrap">
+                <label class="garment-label"
+                  ><input
+                    type="radio"
+                    class="garment-input"
+                    value="best"
+                    (click)="setGarment('best')"
+                  />
+                  <span
+                    [ngClass]="{
+                    'garment-span-active': pricing.garmentQuality === 'best',
+                    'garment-span': pricing.garmentQuality !== 'best'
+                  }"
+                    ><ion-icon
+                      class="acc-icon"
+                      src="../../../assets/icons/radio.svg"
+                    ></ion-icon></span
+                  ><span class="garment-text">Best</span></label
+                >
+                <p class="">
+                  Starting at:<span class="garment-price">$6.80</span>
+                </p>
+                <p class="price-box">
+                  Durability: ★ ★ ★ ★ ★<br />Brands:<br /><br /><span class=""
+                    ><a
+                      href="http://www.ascolour.com"
+                      target="_blank"
+                      class="darment-link"
+                      ><span class="link-span">Ascolour</span></a
+                    ><br /><a
+                      href="http://www.bellacanvas.com"
+                      target="_blank"
+                      class="darment-link"
+                      ><span class="link-span">Bella+Canvas</span></a
+                    ><br /><a
+                      href="http://www.royalapparel.net"
+                      target="_blank"
+                      class="darment-link"
+                      ><span class="link-span">Royal Apparel</span></a
+                    ><br /></span
+                  ><a
+                    href="http://www.losangelesapparel.net"
+                    target="_blank"
+                    class="darment-link"
+                    ><span class="link-span">Los Angeles Apparel</span></a
+                  >
+                </p>
+              </div>
+            </div>
+          </accordion-group>
+          <accordion-group [isOpen]="true">
+            <button
+              class="btn btn-link btn-block clearfix bold black"
+              accordion-heading
+              type="button"
+            >
+              <div class="pull-left float-left">Total Price:</div>
+              <span class="float-left pull-left acc-h"
+                >{{ pricing.totalPrice | currency}}</span
+              >
+            </button>
+            <div class="tp-box">
+              <div class="tp-wrap">
+                <div>Total Price per Shirt:</div>
+                <p class="tp-p">{{ totalPricePerShirt() | currency }}</p>
+                <div>Print Price:</div>
+                <p class="tp-p">{{ pricing.printPrice | currency }}</p>
+                <div>Garment Price:</div>
+                <p class="tp-p">{{ pricing.garmentPrice | currency }}</p>
+              </div>
+              <div class="tp-wrap2">
+                <div class="ion-margin-bottom">
+                  How many do you want?<br />1 to 5000 units.
+                </div>
+                <div class="plus-minus">
+                  <input
+                    type="number"
+                    class="form-number"
+                    min="1"
+                    value="1"
+                    name="quantity"
+                    [(ngModel)]="pricing.quantity"
+                    (keydown)="onKeyDown($event)"
+                  />
+                  <div (click)="updateQnt('+')" class="plus">
+                    <ion-icon class="int" src="assets/icons/+.svg"></ion-icon>
+                  </div>
+                  <div (click)="updateQnt('-')" class="minus">
+                    <ion-icon class="int" src="assets/icons/-.svg"></ion-icon>
+                  </div>
+                </div>
+                <div>Price excl tax:</div>
+                <p class="tp-p">{{ pricing.priceExTax | currency }}</p>
+                <div>
+                  <strong>Total</strong> inc tax (8.6%) excl delivery cost:
+                </div>
+                <div class="total-price">
+                  {{ pricing.totalPrice | currency }}
+                </div>
+              </div>
+            </div>
+          </accordion-group>
+        </accordion>
+
+        <accordion *ngIf="tab === '3'" [isAnimated]="true">
+          <accordion-group [isOpen]="true">
+            <button
+              class="btn btn-link btn-block clearfix bold black"
+              accordion-heading
+              type="button"
+            >
+              <div class="pull-left float-left">Choose Print Locations:</div>
+              <span class="float-left pull-left acc-h">FULL COVERAGE</span>
+            </button>
+            <div class="acc-content">
+              <div class="left-panel">
+                <p>
+                  Dye Sublimation makes full color, full coverage apparel
+                  printing possible. Your artwork can cover the entire front and
+                  back of T-Shirts, Yoga Pants, Shorts, Hoodies, Bikinis and
+                  more.
+                </p>
+              </div>
+              <div class="shirt-box">
+                <div>
+                  <div class="shirts">
+                    <img
+                      class="shirt"
+                      src="../../../assets/images/fullshirt.svg"
+                      alt="T-Shirt Print Area"
+                    />
+
+                    <img
+                      class="shirt"
+                      src="../../../assets/images/shirt2.svg"
+                      alt="T-Shirt"
+                    />
+                  </div>
+                  <div class="text-box">
+                    <p class="text">Front view</p>
+                    <p class="text">Back view</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </accordion-group>
+          <accordion-group [isOpen]="true">
+            <button
+              class="btn btn-link btn-block clearfix bold black"
+              accordion-heading
+              type="button"
+            >
+              <div class="pull-left float-left">Garment Quality?</div>
+              <span class="float-left pull-left acc-h">BEST</span>
+            </button>
+            <div class="garment-box">
+              <div class="garment-wrap opacity-garment">
+                <label class="garment-label"
+                  ><input
+                    type="radio"
+                    class="garment-input"
+                    value="good"
+                  /><span class="garment-span"
+                    ><ion-icon
+                      class="acc-icon"
+                      src="../../../assets/icons/radio.svg"
+                    ></ion-icon></span
+                  ><span class="garment-text">Good</span></label
+                >
+                <p class="">
+                  Starting at:<span class="garment-price">$2.65</span>
+                </p>
+                <p class="price-box">
+                  Durability: ★ ★ ★<br />Brands:<br /><br /><a
+                    href="http://www.hanes.com"
+                    target="_blank"
+                    class="darment-link"
+                    ><span class="link-span">Hanes</span></a
+                  ><br /><a
+                    href="http://www.mygildan.com"
+                    target="_blank"
+                    class="darment-link"
+                    ><span class="link-span">Gildan</span></a
+                  ><br /><a
+                    href="http://www.fruit.com"
+                    target="_blank"
+                    class="darment-link"
+                    ><span class="link-span">Fruit of the Loom</span></a
+                  ><br /><a
+                    href="http://www.portauthorityclothing.com"
+                    target="_blank"
+                    class="darment-link"
+                    ><span class="link-span">Port Authority</span></a
+                  ><br /><a
+                    href="http://www.anvilknitwear.com"
+                    target="_blank"
+                    class="darment-link"
+                    ><span class="link-span">Anvil</span></a
+                  >
+                </p>
+              </div>
+              <div class="garment-wrap opacity-garment">
+                <label class="garment-label"
+                  ><input
+                    type="radio"
+                    class="garment-input"
+                    value="better"
+                  /><span class="garment-span"
+                    ><ion-icon
+                      class="acc-icon"
+                      src="../../../assets/icons/radio.svg"
+                    ></ion-icon></span
+                  ><span class="garment-text">Better</span></label
+                >
+                <p class="">
+                  Starting at:<span class="garment-price">$4.65</span>
+                </p>
+                <p class="price-box">
+                  Durability: ★ ★ ★ ★<br />Brands:<br /><br /><a
+                    href="http://www.nextlevelapparel.com"
+                    target="_blank"
+                    class="darment-link"
+                    ><span class="link-span">Next Level</span></a
+                  ><br /><a
+                    href="http://www.alternativeapparel.com"
+                    target="_blank"
+                    class="darment-link"
+                    ><span class="link-span">Alternative Apparel</span></a
+                  ><br /><a
+                    href="http://www.districtmade.com"
+                    target="_blank"
+                    class="darment-link"
+                    ><span class="link-span">District Made</span></a
+                  ><br /><a
+                    href="http://www.starteeapparel.com"
+                    target="_blank"
+                    class="darment-link"
+                    ><span class="link-span">Star Tee Apparel</span></a
+                  >
+                </p>
+              </div>
+              <div class="garment-wrap">
+                <label class="garment-label"
+                  ><input
+                    type="radio"
+                    class="garment-input"
+                    value="best"
+                  /><span class="garment-span-active"
+                    ><ion-icon
+                      class="acc-icon"
+                      src="../../../assets/icons/radio.svg"
+                    ></ion-icon></span
+                  ><span class="garment-text">Best</span></label
+                >
+                <p class="">
+                  Starting at:<span class="garment-price">$6.80</span>
+                </p>
+                <p class="price-box">
+                  Durability: ★ ★ ★ ★ ★<br />Brands:<br /><br /><span class=""
+                    ><a
+                      href="http://www.ascolour.com"
+                      target="_blank"
+                      class="darment-link opacity-garment"
+                      ><span class="link-span">Ascolour</span></a
+                    ><br /><a
+                      href="http://www.bellacanvas.com"
+                      target="_blank"
+                      class="darment-link opacity-garment"
+                      ><span class="link-span">Bella+Canvas</span></a
+                    ><br /><a
+                      href="http://www.royalapparel.net"
+                      target="_blank"
+                      class="darment-link opacity-garment"
+                      ><span class="link-span">Royal Apparel</span></a
+                    ><br /></span
+                  ><a
+                    href="http://www.losangelesapparel.net"
+                    target="_blank"
+                    class="darment-link"
+                    ><span class="link-span">Los Angeles Apparel</span></a
+                  >
+                </p>
+              </div>
+            </div>
+          </accordion-group>
+
+          <accordion-group [isOpen]="true">
+            <button
+              class="btn btn-link btn-block clearfix bold black"
+              accordion-heading
+              type="button"
+            >
+              <div class="pull-left float-left">Total Price:</div>
+              <span class="float-left pull-left acc-h"
+                >{{ pricing.totalPrice | currency }}</span
+              >
+            </button>
+            <div class="tp-box">
+              <div class="tp-wrap">
+                <div>Total Price per Shirt:</div>
+                <p class="tp-p">{{ totalPricePerShirt() | currency }}</p>
+                <div>Print Price:</div>
+                <p class="tp-p">{{ pricing.printPrice | currency }}</p>
+                <div>Garment Price:</div>
+                <p class="tp-p">{{ pricing.garmentPrice | currency }}</p>
+              </div>
+              <div class="tp-wrap2">
+                <div class="ion-margin-bottom">
+                  How many do you want?<br />1 to 5000 units.
+                </div>
+                <div class="plus-minus">
+                  <input
+                    type="number"
+                    class="form-number"
+                    min="1"
+                    value="1"
+                    name="quantity"
+                    [(ngModel)]="pricing.quantity"
+                    (keydown)="onKeyDown($event)"
+                  />
+                  <div (click)="updateQnt('+')" class="plus">
+                    <ion-icon class="int" src="assets/icons/+.svg"></ion-icon>
+                  </div>
+                  <div (click)="updateQnt('-')" class="minus">
+                    <ion-icon class="int" src="assets/icons/-.svg"></ion-icon>
+                  </div>
+                </div>
+                <div>Price excl tax:</div>
+                <p class="tp-p">{{ pricing.priceExTax | currency }}</p>
+                <div>
+                  <strong>Total</strong> inc tax (8.6%) excl delivery cost:
+                </div>
+                <div class="total-price">
+                  {{ pricing.totalPrice | currency }}
+                </div>
+              </div>
+            </div>
+          </accordion-group>
+        </accordion>
+      </ion-col>
+
+      <ion-col size="12">
+        <div class="button-div ion-text-center">
+          <ion-button
+            expand="block"
+            size="large"
+            (click)="openModal(template)"
+            class="ion-text-center ion-margin-top text-normal"
+            >Continue
+            <ion-icon
+              class="arrow"
+              src="assets/icons/arrow-right.svg"
+            ></ion-icon
+          ></ion-button>
+        </div>
+      </ion-col>
+    </form>
+  </ion-row>
+
+  <my-capabilities></my-capabilities>
+
+  <my-partners></my-partners>
+
+  <my-footer></my-footer>
+
+  <my-chat #chat></my-chat>
+</ion-content>
+
+<ng-template #template>
+  <div class="modal-lg">
+    <div class="modal-content">
+      <my-modal [modalRef]="modalRef"></my-modal>
+    </div>
+  </div>
+</ng-template>

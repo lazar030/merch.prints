@@ -1,0 +1,44 @@
+<div class="bg-grey">
+  <ion-grid class="ion-md-container">
+    <ion-row class="ion-padding-bottom">
+      <ion-col size="12" sizeSm="6">
+        <ion-card>
+          <ion-card-header>
+            <h2 class="dark">Subscribe to Our Newsletter</h2>
+          </ion-card-header>
+        </ion-card>
+      </ion-col>
+      <ion-col size="12" sizeSm="6">
+        <ion-grid>
+          <ion-row class="ion-md-top ">
+            <form [formGroup]="form" (ngSubmit)="onSubmit(form)">
+              <ion-col size="12">
+                <ion-input
+                  class="custom-input"
+                  type="email"
+                  name="email"
+                  formControlName="email"
+                  pattern="[a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{1,}[.]{1}[a-zA-Z]{2,}"
+                  placeholder="Email Address"
+                ></ion-input>
+                <p class="invalid" *ngIf="email.invalid && submitted">
+                  Please enter valid Email Address.
+                </p>
+              </ion-col>
+              <ion-col size="12">
+                <ion-button
+                  class="custom-input"
+                  color="primary"
+                  size="large"
+                  expand="full"
+                  (click)="onSubmit(email)"
+                  >SUBSCRIBE</ion-button
+                >
+              </ion-col>
+            </form>
+          </ion-row>
+        </ion-grid>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</div>

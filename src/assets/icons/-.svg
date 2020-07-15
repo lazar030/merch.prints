@@ -1,0 +1,23 @@
+   <svg
+              viewBox="0 0 24 24"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              width="24px"
+              height="24px"
+              color="currentColor"
+            >
+              <defs>
+                <rect
+                  id="1541"
+                  x="4"
+                  y="11"
+                  width="16"
+                  height="2"
+                  rx="1"
+                ></rect>
+              </defs>
+              <use
+                fill="currentColor"
+                xlink:href="#1541"
+                fill-rule="evenodd"
+              ></use>
+            </svg>

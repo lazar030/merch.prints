@@ -1,0 +1,38 @@
+.quote-nav {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 60px;
+  background: #fff;
+  border-bottom: 1px solid #e6e6e6;
+  z-index: 999999;
+
+  .nav-row {
+    font-size: 24px;
+  }
+
+  .cross {
+    margin-top: 13px;
+    margin-left: 10px;
+    cursor: pointer;
+  }
+
+  .title {
+    color: #000;
+    font-size: 15px;
+    text-align: center;
+    margin: 10px auto 0;
+  }
+
+  .arrows {
+    float: right;
+    margin-top: 13px;
+    margin-right: 10px;
+
+    button {
+      background: transparent;
+      cursor: pointer;
+    }
+  }
+}

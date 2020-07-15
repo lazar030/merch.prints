@@ -1,0 +1,34 @@
+<ion-grid class="bg-grey ion-padding">
+  <ion-row class="align-items-center justify-content-center ion-md-container">
+    <ion-col size="12" sizeMd="12">
+      <h4 class="ion-text-center bold">OUR PARTNERS</h4>
+    </ion-col>
+    <ion-col
+      sizeXs="12"
+      sizeSm="3"
+      sizeMd="2"
+      *ngFor="
+        let x of [
+          '1',
+          '2',
+          '3',
+          '4',
+          '5',
+          '6',
+          '7',
+          '8',
+          '9',
+          '10',
+          '11',
+          '12'
+        ];
+        let i = index
+      "
+      class="align-self-center"
+    >
+      <div class="sponsor-img">
+        <img src="../../../../assets/images/sponsor{{ i + 1 }}.png" alt="" />
+      </div>
+    </ion-col>
+  </ion-row>
+</ion-grid>

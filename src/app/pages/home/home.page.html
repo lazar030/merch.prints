@@ -1,0 +1,82 @@
+<my-header></my-header>
+
+<ion-content class="ion-no-padding">
+  <my-slider></my-slider>
+  <my-title [title]="title"></my-title>
+  <div class="ion-padding content">
+    <div class="info ion-text-center">
+      <p class="descrip">
+        <b>Arena Embroidery</b> is Arizona’s Premier Embroidery Shop & Screen
+        Printer. We specialize in Custom Embroidered Polos, T-Shirts, Patches,
+        Hats, Jackets, Bags, and Logos for Corporate Apparel, Medical Apparel,
+        School Uniforms, Sports Teams, and just about Everything Else.
+      </p>
+      <ion-row class="info ion-no-padding ion-padding-bottom">
+        <ion-col class="ion-text-center" size="12" offsetMd="3" sizeMd="6">
+          <ion-button
+            [routerLink]="['/estimate']"
+            size="large"
+            class="text-normal"
+            >Estimate Your Projejct</ion-button
+          >
+        </ion-col>
+
+        <ion-col
+          class="ion-text-center ion-margin-top ion-margin-bottom ion-padding-bottom"
+          size="12"
+        >
+          <p>
+            <ion-icon src="../../../assets/icons/Cloud.svg"></ion-icon>
+            Use our
+            <span
+              ><a href="javascript:;" (click)="openChat(chat)">Live Chat now</a>
+              to speak to a Sewing Specialist</span
+            >
+          </p>
+
+          <div class="divider"></div>
+
+          <p class="ion-margin-top">
+            <ion-icon src="../../../assets/icons/tel.svg"></ion-icon>
+            Or call us today at
+            <span
+              ><a href="tel:(855) 462-7362">(855) 462-7362</a> or
+              <a href="tel:tel:(855) 462-7362">(855) GO ARENA</a></span
+            >
+          </p>
+        </ion-col>
+      </ion-row>
+      <p class="descrip">
+        An <b>Arena Specialist</b> is waiting to help you find the right
+        <b>embroidered shirt, hat or promotional accessory </b> to help you grow
+        your brand, rep your school, or promote your team. We offer
+        personalization for businesses and brands looking for customized
+        embroidery, and we can provide
+        <b>FREE Graphic Design & Local Delivery</b> with every order. We know
+        that custom embroidered apparel is a tremendous boost to any marketing
+        strategy or event, and we are here to help you get the most from your
+        brand.
+      </p>
+
+      <p>
+        Feel free ask us any questions you have about embroidery pricing or
+        screen printing, we are here to help.
+        <b>Thank you for choosing Arena!</b>
+      </p>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <my-testimonials></my-testimonials>
+
+  <my-subscribe></my-subscribe>
+
+  <my-capabilities></my-capabilities>
+
+  <my-partners></my-partners>
+
+  <my-footer></my-footer>
+</ion-content>
+
+<my-chat #chat></my-chat>

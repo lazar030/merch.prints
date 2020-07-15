@@ -1,0 +1,159 @@
+<my-header></my-header>
+
+<ion-content class="ion-no-padding">
+  <div class="ion-padding content">
+    <div class="banner">
+      <ion-img src="../../../assets/images/baner.jpg"></ion-img>
+    </div>
+
+    <my-title [title]="title"></my-title>
+
+    <div class="info">
+      <h4 class="bold">PREMIUM APPAREL & INKS + DEDICATED CUSTOMER SERVICE</h4>
+      <p>
+        As a leading Band & Artist Merchandiser, <b>Arena Prints</b> makes the
+        process of designing, printing, and fulfilling custom printed tee shirts
+        and band merchandise seamless and easy. We use premium inks and proudly
+        print on <b>Next Level Apparel</b>. We know how important your merch is
+        your band’s revenue stream, so if you need assistance with optimizing
+        your print ready files or still need help designing your artwork, an
+        <b>Arena Design Specialist</b> is ready to assist <b>FREE</b> of charge.
+      </p>
+
+      <div class="ion-padding-top">
+        <h4 class="bold">ON-DEMAND NATIONWIDE TOUR RESUPPLY</h4>
+        <p>
+          <b>Arena Prints</b> also provides a merchandise tour resupply service
+          for artists, bands, and labels needing to restock and drop-ship bulk
+          prints to future event locations. Planning and successfully executing
+          a resupply strategy is one of the hardest parts of monetizing a
+          regional and national tour. We are here to change that.
+        </p>
+
+        <div class="p-ion-margin-top">
+          <b>Arena Prints</b> works with apparel printing companies from all
+          over the nation to form a single one-stop printing resource and
+          collective. We have extensive experience in shipping reorders to
+          venues, hotels, festivals and any other business establishments. Need
+          us to help plan and coordinate the merchandising logistics for your
+          entire tour? Contact an Arena Prints Specialist now.
+        </div>
+      </div>
+      <ion-row class="info ion-no-padding ion-padding-bottom">
+        <ion-col
+          class="ion-text-center ion-margin-top ion-margin-bottom ion-padding-bottom"
+          size="12"
+        >
+          <p>
+            <ion-icon src="../../../assets/icons/Cloud.svg"></ion-icon>
+            Use our
+            <span
+              ><a href="javascript:;" (click)="openChat(chat)">Live Chat now</a>
+              to speak to a Sewing Specialist</span
+            >
+          </p>
+
+          <div class="divider"></div>
+
+          <p class="ion-margin-top">
+            <ion-icon src="../../../assets/icons/tel.svg"></ion-icon>
+            Or call us today at
+            <span
+              ><a href="tel:(855) 462-7362">(855) 462-7362</a> or
+              <a href="tel:tel:(855) 462-7362">(855) GO ARENA</a></span
+            >
+          </p>
+        </ion-col>
+      </ion-row>
+      <h4 class="bold">
+        WE PROVIDE BANDCAMP & AMAZON FULFILLMENT FOR SOFT GOODS
+      </h4>
+      <p>
+        Do you currently sell band merchandise on Bandcamp or Amazon? Most band
+        profiles show a limited amount of merchandise listings that are always
+        out of stock. It's next to impossible to keep up with fulfilling orders
+        and stocking inventory, plus having to front load the costs of printing
+        quantities and sizes that take months to sell is nothing more than a
+        massive inconvenience.
+      </p>
+
+      <p class="ion-padding-top">
+        Arena's on-demand and tour merchandise resupply are the solution you've
+        been looking for. Arena has mastered Bandcamp Fulfillment, Amazon
+        Fulfillment, and Amazon FBA Prep Services. Not only will you get the
+        best printed merchandise at the lowest price points, Arena handles all
+        the fulfillment, shipping and customer management functions- so you can
+        focus on doing more of what you love. Talk to an Arena Specialist today
+        about your Bandcamp & Amazon fulfillment needs.
+      </p>
+
+      <h4 class="bold">
+        MERCHANDISE FOR STEAMERS, YOUTUBERS, & THE INSTA-FAMOUS
+      </h4>
+
+      <p>
+        Are you are a Streamer on Twitch or Youtube, or have a great social
+        following that you want to monetize with custom merchandise?
+        <b>Arena</b> is your best solution! Not only can we supply all of your
+        bulk apparel merchandise needs
+        <b>(shirts, hats, custom patches, jackets, and more)</b> at the most
+        competitive price,
+        <b>Arena provides Artists & Streamers with an On-Demand Storefront</b>
+        that gives you <b> ½ of the Merchandise Revenue</b> and a storefront
+        link that you can share with your followers to buy your exclusive
+        merchandise. The more you promote your store to your follows, the more
+        merch you will sell & the more revenue you will generate./
+      </p>
+
+      <p class="ion-padding-top ion-margin-bottom ion-padding-bottom">
+        Speak with
+        <span (click)="openChat(chat)" class="blue-span"
+          >an Arena Specialist</span
+        >
+        now to learn how you can drive more revenue with your social & streaming
+        following with Bulk Merchandising & On-Demand Ecommerce.
+      </p>
+      <!-- Carousel -->
+      <carousel
+        [itemsPerSlide]="itemsPerSlide"
+        [singleSlideOffset]="singleSlideOffset"
+        [interval]="3000"
+        [showIndicators]="false"
+      >
+        <slide *ngFor="let slide of slides; let index=index">
+          <img
+            [src]="slide.image"
+            alt="image slide"
+            style="display: block; width: 100%;"
+          />
+        </slide>
+      </carousel>
+      <!-- End Caorusel -->
+      <h4 class="bold ion-margin-top ion-padding-top">
+        DRIVE MORE REVENUE WITH ARENA QUALITY & CONVENIENCE
+      </h4>
+      <p class="ion-padding-top">
+        Our goal is to bring value, reliability, and on-time delivery, to every
+        artist and label we with work with to ensure that each show is a
+        success- financially and otherwise. We love working with artists and
+        bands, and we are here to manage the entire fulfillment process. We look
+        forward to learning more about your tour and how we can help with every
+        aspect of your merchandising needs. <b>Thank you for choosing Arena!</b>
+      </p>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <my-testimonials></my-testimonials>
+
+  <my-subscribe></my-subscribe>
+
+  <my-capabilities></my-capabilities>
+
+  <my-partners></my-partners>
+
+  <my-footer></my-footer>
+</ion-content>
+
+<my-chat #chat></my-chat>

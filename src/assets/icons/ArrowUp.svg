@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.2 (57519) - http://www.bohemiancoding.com/sketch -->
+    <title>ArrowUp</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M11.999525,10.693776 L16.9489691,15.64322 C17.4189718,16.1132228 18.1759935,16.1182261 18.6471098,15.6471098 C19.1149643,15.1792553 19.1123364,14.4180854 18.64322,13.9489691 L13.0510309,8.35677997 C12.7646343,8.07038334 12.3716651,7.956645 12.0017516,8.01808094 C11.631461,7.95678296 11.2370549,8.06964414 10.9510127,8.35568628 L5.35568628,13.9510127 C4.88541984,14.4212792 4.87999193,15.1783038 5.35084405,15.6491559 C5.81843621,16.1167481 6.57960772,16.1136933 7.04898727,15.6443137 L11.999525,10.693776 Z" id="path-1"></path>
+    </defs>
+    <g id="ArrowUp" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <mask id="mask-2" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+        <use id="arrow-up" fill="#000000" xlink:href="#path-1"></use>
+    </g>
+</svg>
